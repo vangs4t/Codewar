@@ -2,18 +2,14 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class SuzukiProblem {
-    public static String lineupStudents(String students) {
+    public static String[] lineupStudents(String students) {
         String[] res = new String[50];
         for (int i = 0; i < res.length; i++){
             res[i] = students;
         }
         res = students.split(" ");
         Arrays.sort(res, Comparator.comparingInt(String::length).thenComparing(Comparator.naturalOrder()).reversed());
-        return Arrays.toString(res);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(lineupStudents("Tadashi Takahiro Takao Takashi Takayuki Takehiko Takeo Takeshi Takeshi"));
+        return res;
     }
 }
 //public class KataTests
